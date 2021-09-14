@@ -13,5 +13,4 @@ public class Payment {
     private Boolean state;
     private Character part;
     private Long value;
-
 }

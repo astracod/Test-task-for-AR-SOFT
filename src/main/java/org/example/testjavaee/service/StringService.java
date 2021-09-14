@@ -27,12 +27,21 @@ public class StringService {
         return String.join("  ", stringList);
     }
 
+    /**
+     * кодировка символов DEC
+     * 1040-1045 от А - Е
+     * 1025 - Ё
+     * 1046 - 1103 от Ж - я
+     *
+     * @param c
+     * @return
+     */
     private int getAlphabetNumber(char c) {
         if (c <= 1045 && c >= 1040) {
             return c - 1039;
         } else if (c == 1025) {
             return c - 1018;
-        } else if (c > 1045) {
+        } else if (c > 1045 && c <= 1103) {
             return c - 1038;
         }
         return -1;

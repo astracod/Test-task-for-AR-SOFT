@@ -27,8 +27,8 @@
 <h1>Second Task</h1>
 <br>
 <form action="${pageContext.request.contextPath}/bank" method="post">
-    <p><textarea  name="payments"></textarea></p>
-    <p><input type="submit"></p>
+    <p><textarea rows="10" cols="45" name="payments"></textarea></p>
+    <p><input type="submit" value="Send"></p>
 </form>
 
 </body>
