@@ -1,0 +1,18 @@
+<root>
+    <payments>
+        <payment>
+            <name>vasia</name>
+            <supplyDate>2020-04-02 13:11:04</supplyDate>
+            <state>false</state>
+            <part>п</part>
+            <value>200</value>
+        </payment>
+        <payment>
+            <name>lena</name>
+            <supplyDate>2020-09-22 10:20:09</supplyDate>
+            <state>true</state>
+            <part>к</part>
+            <value>70</value>
+        </payment>
+    </payments>
+</root>
