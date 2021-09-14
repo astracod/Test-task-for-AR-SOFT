@@ -10,7 +10,9 @@ public class DataSourceContainer {
 
     public static DataSourceContainer INSTANCE = new DataSourceContainer();
 
-    public DataSourceContainer() {
+
+    public DataSourceContainer()  {
+
         String url = "jdbc:postgresql://localhost:5432/bank";
         String user = "postgres";
         String password = "";
