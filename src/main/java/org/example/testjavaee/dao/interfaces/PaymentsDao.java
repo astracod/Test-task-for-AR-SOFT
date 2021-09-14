@@ -1,5 +1,9 @@
 package org.example.testjavaee.dao.interfaces;
 
-public interface PaymentsDao {
+import org.example.testjavaee.entities.Payment;
 
+public interface PaymentsDao {
+    void add(Payment p);
+    Long getBalance();
+    Long getSumNalog();
 }

@@ -1,5 +1,6 @@
 package org.example.testjavaee.dao.implementation;
 
+import org.example.testjavaee.dao.interfaces.PaymentsDao;
 import org.example.testjavaee.entities.Payment;
 
 import javax.sql.DataSource;
@@ -7,7 +8,7 @@ import java.sql.*;
 import java.util.Date;
 import java.util.Optional;
 
-public class PaymentsDaoImpl {
+public class PaymentsDaoImpl implements PaymentsDao {
     private DataSource dataSource = DataSourceContainer.INSTANCE.getDataSource();
 
     public void add(Payment p) {

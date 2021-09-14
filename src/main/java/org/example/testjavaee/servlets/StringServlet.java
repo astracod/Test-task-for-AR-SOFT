@@ -20,10 +20,10 @@ public class StringServlet extends HttpServlet {
 
         System.out.println(text);
         if (text != null) {
-            String map2 = service.answer(text);
-            String map3 = service.reductionToNumber(text);
-            req.setAttribute("name", map2);
-            req.setAttribute("num", map3);
+            String stringOfLetters = service.answer(text);
+            String stringOfNumbers = service.reductionToNumber(text);
+            req.setAttribute("name", stringOfLetters);
+            req.setAttribute("num", stringOfNumbers);
         }
         getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
     }

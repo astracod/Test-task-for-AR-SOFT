@@ -1,11 +1,12 @@
 package org.example.testjavaee.service;
 
 import org.example.testjavaee.dao.implementation.PaymentsDaoImpl;
+import org.example.testjavaee.dao.interfaces.PaymentsDao;
 import org.example.testjavaee.entities.Payment;
 import org.example.testjavaee.entities.Result;
 
 public class BankService {
-    private PaymentsDaoImpl paymentsDao = new PaymentsDaoImpl();
+    private PaymentsDao paymentsDao = new PaymentsDaoImpl();
 
     public void add(Payment p){
         paymentsDao.add(p);

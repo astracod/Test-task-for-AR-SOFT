@@ -6,12 +6,10 @@ import java.util.Locale;
 
 public class StringService {
 
-
     public String answer(String text) {
         String regex = "([а-яА-ЯёЁ](?!\\s))";
         return text.replaceAll(regex, ("$0   "));
     }
-
 
     public String reductionToNumber(String text) {
         String a = text.toUpperCase(Locale.forLanguageTag(text));

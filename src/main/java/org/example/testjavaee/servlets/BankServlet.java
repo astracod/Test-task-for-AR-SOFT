@@ -37,7 +37,6 @@ public class BankServlet extends HttpServlet {
             if (!a){
                 throw new RequestProcessingException("Заполните все поля формы.");
             }else {
-                System.out.println(payment);
                 bankService.add(payment);
             }
         }
