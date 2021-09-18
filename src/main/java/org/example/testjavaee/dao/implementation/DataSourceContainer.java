@@ -4,6 +4,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import javax.sql.DataSource;
+import java.io.IOException;
+import java.util.Properties;
 
 public class DataSourceContainer {
     private final DataSource dataSource;
@@ -11,17 +13,26 @@ public class DataSourceContainer {
     public static DataSourceContainer INSTANCE = new DataSourceContainer();
 
 
-    public DataSourceContainer()  {
+    public DataSourceContainer() {
+        //"C:/Users/Admin/Desktop/projects/org.example.testjavaee/1.properties"
 
-        String url = "jdbc:postgresql://localhost:5432/bank";
-        String user = "postgres";
-        String password = "";
+
+
+
+        Properties sprop = new Properties();
+
+        try {
+            sprop.load((DataSourceContainer.class.getClassLoader()
+                    .getResourceAsStream("1.properties")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl(url);
-        config.setUsername(user);
-        config.setPassword(password);
-        config.setDriverClassName("org.postgresql.Driver");
+        config.setJdbcUrl(sprop.getProperty("url"));
+        config.setUsername(sprop.getProperty("user"));
+        config.setPassword(sprop.getProperty("password"));
+        config.setDriverClassName(sprop.getProperty("driver"));
         config.setMinimumIdle(2);
         config.setMaximumPoolSize(5);
 
